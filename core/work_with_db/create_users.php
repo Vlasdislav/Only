@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './core/config.php'; #For requests from root project
 
 $sql = "CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './core/config.php'; # For requests from root project
 
 try {
     $sql = "SELECT * FROM users";

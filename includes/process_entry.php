@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = json_decode($response, true);
     
     if ($result['status'] === 'ok') {
-        echo "SmartCaptcha успешно пройдена!";
+        echo "SmartCaptcha успешно пройдена!\n";
         try {
             $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :login OR tel = :login");
             $stmt->execute([
@@ -47,15 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['user']['name'] = $user['name'];
                 $_SESSION['user']['email'] = $user['email'];
                 $_SESSION['user']['tel'] = $user['tel'];
+                
                 $_SESSION['status'] = "success";
                 $_SESSION['message'] = "Успешный вход!";
                 header('Location: ../profile');
-                exit();
             } else {
                 $_SESSION['status'] = "error";
                 $_SESSION['message'] = "Неправильный логин или пароль!";
                 header('Location: ../entry');
-                exit();
             }
         } catch (PDOException $e) {
             echo "Ошибка: " . $e->getMessage() . "\n";

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     ':id' => $userId
                 ]);
             } catch (PDOException $e) {
-                echo "Ошибка поиске пароля по `id`: " . $e->getMessage();
+                echo "Ошибка поиске пароля по `id`: " . $e->getMessage() . "\n";
             }
             try {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     header('Location: ../profile');
                 }
             } catch (PDOException $e) {
-                echo "Ошибка при обновлении данных: " . $e->getMessage();
+                echo "Ошибка при обновлении данных: " . $e->getMessage() . "\n";
             }
         } else {
             $_SESSION['status'] = "error";
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['message'] = "Данные успешно обновлены!";
             header('Location: ../profile');
         } catch (PDOException $e) {
-            echo "Ошибка при обновлении данных: " . $e->getMessage();
+            echo "Ошибка при обновлении данных: " . $e->getMessage() . "\n";
         }
     }
 }
