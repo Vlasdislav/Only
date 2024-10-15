@@ -75,9 +75,10 @@ button:hover {
 }
 
 .tooltip {
-    display: inline-block;
+    display: flex;
     position: relative;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .tooltip .icon {
@@ -121,4 +122,19 @@ button:hover {
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+.edit-password-btn {
+    text-decoration: underline;
+    color: #4574a0;
+    cursor: pointer;
+}
+
+.edit-password-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.active {
+    display: block;
 }

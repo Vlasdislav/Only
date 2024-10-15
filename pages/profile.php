@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header('Location: entry.php');
+    header('Location: ./home');
     exit();
 }
 
@@ -34,6 +34,17 @@ $user = $_SESSION['user'];
                 <label for="tel">Телефон</label>
                 <input type="tel" id="tel" name="tel" value=<?= $user['tel'] ?> required>
             </div>
+            <span class="edit-password-btn">Изменить пароль</span>
+            <div class="edit-password-form">
+                <div class="form-group">
+                    <label for="password">Введите свой пароль</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="new_password">Введите новый пароль</label>
+                    <input type="password" id="new_password" name="new_password">
+                </div>
+            </div>
             <?php if (isset($_SESSION['status'])): ?>
                 <div class="alert alert-<?= $_SESSION['status'] ?>">
                     <?php
@@ -50,5 +61,6 @@ $user = $_SESSION['user'];
             <button type="submit" class="button">Сохранить изменения</button>
         </form>
     </div>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

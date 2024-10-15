@@ -19,10 +19,10 @@ if (isset($_SESSION['user'])) {
         <form class="form" action="../includes/process_entry.php" method="POST">
             <h2>Вход</h2>
             <div class="form-group">
-                <label for="login">
-                    Логин
+                <label for="login" style="display: flex; align-items: center;">
+                    <span>Логин</span>
                     <span class="tooltip">
-                        <span class="icon">!</span>
+                        <img class="icon" src="../assets/icons/attention.svg" alt="!">
                         <span class="tooltip-text">Электронная почта или номер телефона</span>
                     </span>
                 </label>
