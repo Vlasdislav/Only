@@ -32,6 +32,12 @@ if (isset($_SESSION['user'])) {
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required>
             </div>
+            <div 
+                style="height: 100px"
+                id="captcha-container"
+                class="smart-captcha"
+                data-sitekey="ysc1_HJ3gLeT2x1qxOK81EbR7hiHtsKTOWvgWRU4bopQ7008dd190"
+            ></div>
             <span class="form-maybe">Если нет аккаунта &#8212; <a href="./registration">зарегистрируйте</a></span>
             <?php if (isset($_SESSION['status'])): ?>
                 <div class="alert alert-<?= $_SESSION['status'] ?>">
@@ -45,5 +51,6 @@ if (isset($_SESSION['user'])) {
             <button type="submit">Войти</button>
         </form>
     </div>
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
 </body>
 </html>
